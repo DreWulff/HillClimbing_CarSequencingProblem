@@ -82,22 +82,36 @@ Parameters ReadInstance (string file_path)
         }
     }
     parameters.SetOptions(options);
+    parameters.SetClassDemand(class_demand);
     return (parameters);
 }
 
-void PrintInstance(Parameters instance)
+void PrintSolution(vector<int> solution)
 {
-    cout << "Printing Instance\n";
-    cout << "Options:\n";
-    for (int option : instance.GetOptions(3))
+    cout << "Solucion inicial:\n";
+    int init = 1;
+    for (int option : solution)
     {
-        cout << IntToStr(option) + '\n';
+        if (init == 1) {cout << IntToStr(option); init = 0;}
+        else {cout << ", " + IntToStr(option);}
     }
+    cout << '\n';
 }
 
 vector<int> GetInitial(Parameters instance)
 {
-    
+    vector<int> solution;
+    for (int car_class = 0; car_class < instance.GetNumClasses(); car_class++)
+    {
+        for (int demand = 0; demand < instance.GetClassDemand(car_class); demand++)
+        {
+            solution.push_back(car_class + 1);
+        }
+    }
+    random_device rd; 
+    auto rng = default_random_engine { rd() };
+    shuffle(solution.begin(), solution.end(), rng);
+    return (solution);
 }
 
 int main(int argc, char **argv)
@@ -108,5 +122,7 @@ int main(int argc, char **argv)
         exit(1);
     }
     Parameters instance = ReadInstance(argv[1]);
+    cout << "Instancia correctamente cargada.\n";
+    PrintSolution(GetInitial(instance));
 
 }

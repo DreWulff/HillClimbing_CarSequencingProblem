@@ -4,6 +4,9 @@
 #include <sstream>
 #include <string>
 #include <tuple>
+#include <algorithm>
+#include <random>
+
 
 using namespace std;
 
