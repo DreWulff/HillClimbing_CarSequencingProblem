@@ -1,11 +1,15 @@
 CFLAGS = -g -Wall
-CC = gcc
+CC = g++
 
 solver: main.o parameters.o
 	$(CC) $(CFLAGS) -o main main.o parameters.o
 
-main.o: header.h main.cpp
-	$(CC) $(CFLAGS) -c main.cpp
+main.o: main.cpp
+	$(CC) -c main.cpp
 
-parameters.o: header.h parameters.cpp
-	$(CC) $(CFLAGS) -c parameters.cpp
+parameters.o: parameters.cpp
+	$(CC) -c parameters.cpp
+
+.PHONY : clean
+clean :
+	-rm *.o $(objects) main

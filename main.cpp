@@ -1,5 +1,7 @@
 #include "header.h"
 
+using namespace std;
+
 int StrToInt(string in)
 {
     stringstream ss;
@@ -33,6 +35,8 @@ vector<int> ReadWordsToNums(string line, char separator)
             word = "";
         }
     }
+    words.push_back(StrToInt(word));
+    return (words);
 }
 
 Parameters ReadInstance (string file_path)
@@ -56,7 +60,6 @@ Parameters ReadInstance (string file_path)
     {
         if ((line[0] != '#')&&(line != ""))
         {
-            cout << line + '\n';
             if (step == 1) {
                 vector<int> first = ReadWordsToNums(line, ' ');
                 parameters.SetNumCars(first[0]);
@@ -71,6 +74,7 @@ Parameters ReadInstance (string file_path)
                 step++;
             } else {
                 vector<int> translated = ReadWordsToNums(line, ' ');
+                translated.erase(translated.begin());
                 class_demand.push_back(translated[0]);
                 translated.erase(translated.begin());
                 options.push_back(translated);
@@ -84,11 +88,16 @@ Parameters ReadInstance (string file_path)
 void PrintInstance(Parameters instance)
 {
     cout << "Printing Instance\n";
-    cout << "Options:";
+    cout << "Options:\n";
     for (int option : instance.GetOptions(3))
     {
-        cout << IntToStr(option);
+        cout << IntToStr(option) + '\n';
     }
+}
+
+vector<int> GetInitial(Parameters instance)
+{
+    
 }
 
 int main(int argc, char **argv)
@@ -99,5 +108,5 @@ int main(int argc, char **argv)
         exit(1);
     }
     Parameters instance = ReadInstance(argv[1]);
-    PrintInstance(instance);
+
 }

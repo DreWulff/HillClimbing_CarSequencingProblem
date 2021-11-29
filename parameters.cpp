@@ -1,5 +1,7 @@
 #include "header.h"
 
+using namespace std;
+
 Parameters::Parameters(){}
 
 void Parameters::SetNumCars(int num_cars_in)
