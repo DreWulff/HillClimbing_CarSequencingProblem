@@ -17,28 +17,28 @@
 
 
 %--------------------No borrar esta secci\'on--------------------------------%
-\section*{Evaluaci\'on}
+\section*{Evaluación}
 
 \begin{tabular}{ll}
 Mejoras 1ra Entrega (10 \%): &  \underline{\hspace{2cm}}\\
 C\'odigo Fuente (25 \%): &  \underline{\hspace{2cm}}\\
-Representaci\'on (25 \%):  & \underline{\hspace{2cm}} \\
-Descripci\'on del algoritmo (35 \%):  & \underline{\hspace{2cm}} \\
-Bibliograf\'ia (5 \%): & \underline{\hspace{2cm}}\\
+Representación (25 \%):  & \underline{\hspace{2cm}} \\
+Descripción del algoritmo (35 \%):  & \underline{\hspace{2cm}} \\
+Bibliografía (5 \%): & \underline{\hspace{2cm}}\\
  &  \\
 \textbf{Nota Final (100)}:   & \underline{\hspace{2cm}}
 \end{tabular}
 %---------------------------------------------------------------------------%
 
 \begin{abstract}
-En este documento se da una vista introductoria al \textit{\textbf{Car Sequencing Problem}}, problema que busca determinar una secuencia de automóviles para una linea de ensamblaje con tal de cumplir con la demanda de diversos tipos de vehículos, e intentando minimizar la penalización asociada a sobrepasar la capacidad máxima de las estaciones que instalan las diversas opciones que estos vehículos pueden requerir. Se suelen utilizar diversos m\'etodos para solucionar este problema, tanto exactos como heurísticos, aunque dada la efectividad de estos últimos para encontrar soluciones en cortos periodos de tiempo, se suele favorecer su aplicación.
+En este documento se da una vista introductoria al \textit{\textbf{Car Sequencing Problem}}, problema que busca determinar una secuencia de automóviles para una linea de ensamblaje con tal de cumplir con la demanda de diversos tipos de vehículos, e intentando minimizar la penalización asociada a sobrepasar la capacidad máxima de las estaciones que instalan las diversas opciones que estos vehículos pueden requerir. Se suelen utilizar diversos m\'etodos para solucionar este problema, tanto exactos como heurísticos, aunque dada la efectividad de estos últimos para encontrar soluciones en cortos periodos de tiempo, se suele favorecer su aplicación. Además se presentan una representación y algoritmo a utilizar para posterior solución de diversas instancias del problema con \textit{Hill Climbing}.
 \end{abstract}
 
 
 
 \section{Introducción}
 El objetivo de este documento es presentar el contexto del  \textit{\textbf{Car Sequencing Problem}}, problema cuyo origen proviene de la necesidad por establecer una secuencia óptima de autos en una linea de ensamblaje, la cual cuenta con múltiples estaciones que se encargan de añadir piezas especificas a los autos que pasan por cada una de estas, y las cuales cuentan con una capacidad limitada de autos en los que pueden trabajar a la vez. Definir correctamente esta secuencia implica que el curso de los automóviles a lo largo de la linea de ensamblaje sea mas fluida, y por lo tanto que el trabajo sea mas eficiente, lo cual resulta en un ahorro de tiempo, que en consecuencia implica un ahorro de recursos y gastos en general.\\
-Dado el motivo previamente mencionado es que se ha de presentar en este documento la definición del problema en mas detalle, seguido del estado de arte, identificando y describiendo las múltiples formas en que se ha propuesto solucionar este problema en la contemporaneidad, definiendo posteriormente un modelo matemático base que considerar al momento de diseñar una solución propia, y finalizando con conclusiones relevantes asociadas al problema.
+Dado el motivo previamente mencionado es que se ha de presentar en este documento la definición del problema en mas detalle, seguido del estado de arte, identificando y describiendo las múltiples formas en que se ha propuesto solucionar este problema en la contemporaneidad, definiendo posteriormente un modelo matemático base que considerar al momento de diseñar una solución propia, y finalizando con una representación y definición del algoritmo a utilizar para la resolución de diversas instancias del problema, basado en el método \textit{Hill Climbing}.
 
 
 
