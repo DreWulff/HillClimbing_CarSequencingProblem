@@ -74,3 +74,26 @@ vector<int> Parameters::GetOptions(int car_class)
 {
     return (options[car_class]);
 }
+
+
+Solution::Solution(){}
+
+void Solution::SetSolution(vector<int> solution_in)
+{
+    solution = solution_in;
+}
+
+void Solution::SetObj(int obj_in)
+{
+    obj = obj_in;
+}
+
+vector<int> Solution::GetSolution()
+{
+    return (solution);
+}
+
+int Solution::GetObj()
+{
+    return (obj);
+}
